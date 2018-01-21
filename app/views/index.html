@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Hello Go!</title>
+  </head>
+  <body>
+        <div class='container'>
+                <div class='row'>
+                    <div class='col-sm-12'>
+                        
+                        <div class="jumbotron">
+                            <h1 class="display-4">Sphere Values</h1>
+                          </div>
+            
+                        <ul class='list-group'>
+                            {{ range . }}
+                            <li class='list-group-item'>{{ .Id }}: {{ .Val }}</li>
+                            {{ end }}
+                        </ul>
+            
+                        <form method='POST' action='vals'>
+                            <input type="hidden" value="WORLD" name="HELLO" />
+                            <div class="form-group">
+                              <label for="newvalue">New Value</label>
+                              <input minlength='5' maxlength='100' type="text" class="form-control" name="val" aria-describedby="valuehelp" placeholder="New value">
+                              <small id="valuehelp" class="form-text text-muted">Enter a new value (between 5-100 characters) to add to the database!</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+            
+  </body>
+</html>
+
+
+
